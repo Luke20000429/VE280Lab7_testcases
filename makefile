@@ -19,7 +19,7 @@ test_3: test_3.o course.o
 test_4: test_4.o course.o
 		$(CC) $(CFLAGS) -o test_4.out test_4.o course.o
 
-memcheck: test_1 test_2 test_3
+memcheck: test_1 test_2 test_3 test_4
 	    valgrind --leak-check=full ./test_1.out ./test_2.out ./test_3.out ./test_4.out
 
 clean:

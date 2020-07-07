@@ -10,5 +10,5 @@ diff ./outputs/test_2.out ./outputs/test_2.ans
 diff ./outputs/test_3.out ./outputs/test_3.ans
 diff ./outputs/test_4.out ./outputs/test_4.ans
 
-rm -rf ./outputs/*.out
+#rm -rf ./outputs/*.out
 make clean
