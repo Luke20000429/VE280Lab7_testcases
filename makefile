@@ -5,7 +5,7 @@ CFLAGS = -Werror -Wall
 %.o: %.cpp
 		$(CC) $(CFLAGS) -o $@ -c $<
 
-all: test_1 test_2 test_3 test_4
+all: test_1 test_2 test_3 test_4 test_5
 
 test_1: test_1.o course.o
 		$(CC) $(CFLAGS) -o test_1.out test_1.o course.o
@@ -19,8 +19,11 @@ test_3: test_3.o course.o
 test_4: test_4.o course.o
 		$(CC) $(CFLAGS) -o test_4.out test_4.o course.o
 
-memcheck: test_1 test_2 test_3 test_4
-	    valgrind --leak-check=full ./test_1.out ./test_2.out ./test_3.out ./test_4.out
+test_5: test_5.o course.o
+		$(CC) $(CFLAGS) -o test_5.out test_5.o course.o
+
+memcheck: test_1 test_2 test_3 test_4 test_5
+	    valgrind --leak-check=full ./test_1.out ./test_2.out ./test_3.out ./test_4.out ./test_5.out
 
 clean:
 		rm -f *.o *.out
